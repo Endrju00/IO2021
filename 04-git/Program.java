@@ -3,6 +3,7 @@ public class Main {
     int x = 5;
     int y = 4;
 
+    // zmiana 3
     public static void main(String[] args) {
         Main myObj = new Main();
         System.out.println(myObj.x);
@@ -11,4 +12,4 @@ public class Main {
     }
 }
 // Komentarz
-//zmiana3
+// zmiana3
