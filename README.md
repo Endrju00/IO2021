@@ -2,4 +2,4 @@
 ## Imię i nazwisko: Andrzej Kapczyński
 ## Nr albumu: 145358
 ## Grupa: i5.1
-## Edit
+03.11.2021
