@@ -1,3 +1,4 @@
+konflikt
 # IO2021
 ## Imię i nazwisko: Andrzej Kapczyński
 ## Nr albumu: 145358
