@@ -1,3 +1,4 @@
+//kom na pocz pliku
 public class Main {
     int x = 5;
     int y = 4;
@@ -10,3 +11,4 @@ public class Main {
     }
 }
 // Komentarz
+//zmiana3
