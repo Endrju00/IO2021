@@ -1,5 +1,6 @@
 public class Main {
     int x = 5;
+    int y = 4;
 
     public static void main(String[] args) {
         Main myObj = new Main();
