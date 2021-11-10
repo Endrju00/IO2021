@@ -18,8 +18,8 @@ Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży 
 1. [Sprzedający](#ac1) wystawia produkt na aukcję. ([UC1](#uc1))
 2. [Kupujący](#ac2) oferuje kwotę za produkt wyższą od aktualnie najwyższej oferty. ([BR1](#br1))
 3. [Kupujący](#ac2) wygrywa aukcję ([BR2](#br2))
-4. [Kupujący](#ac2) przekazuje należność Sprzedającemu.
-5. [Sprzedający](#ac1) przekazuje produkt Kupującemu. ([UC2](#uc2))
+4. [Kupujący](#ac2) przekazuje należność [Sprzedającemu](#ac1). ([UC2](#uc2))
+5. [Sprzedający](#ac1) przekazuje produkt Kupującemu. ([UC3](#uc3))
 
 **Scenariusze alternatywne:** 
 
@@ -50,10 +50,12 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
-* [UC2](#uc2): Przekazanie przedmiotu kupującemu
+* [UC2](#uc2): Przekazanie należności sprzedającemu. 
+* [UC3](#uc3): Przekazanie przedmiotu kupującemu
 
 [Kupujący](#ac2)
-* [UC2](#uc2) Przekazanie przedmiotu kupującemu
+* [UC2](#uc2): Przekazanie należności sprzedającemu.
+* [UC3](#uc3) Przekazanie przedmiotu kupującemu
 
 ---
 <a id="uc1"></a>
@@ -77,27 +79,55 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc2"></a>
-### UC2: Przekazanie przedmiotu kupującemu
+### UC2: Przekazanie należności sprzedającemu.
 
 **Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. [Sprzedający](#ac1) przygotowuje przedmiot.
-2. [Kupujący](#ac2) umawia termin odebrania przedmiotu ze [Sprzedającym](#ac1)
-3. [Kupujący](#ac2) okazuje się w umówionym terminie i potwierdza swoją tożsamość
-4. [Sprzedający](#ac1) przekazuje przedmiot [Kupującemu](#ac2)
-5. [Sprzedający](#ac1) wprowadza status przekazania przedmiotu
-6. System informuje o zakończonym statusie przekazania przedmiotu
+
+1. [Kupujący](#ac2) zgłasza chęć uregulowania należności
+2. System informuje o sposobach płatności
+3. [Kupujący](#ac2) wybiera sposób płatności
+4. [Kupujący](#ac2) zostaje przekierowany na strone zewnętrznej metody płatności
+5. [Kupujący](#ac2) dokonuje płatności
+6. System weryfikuje status płatności
+7. System informuje o pomyślnym zakończeniu płatności
 
 **Scenariusze alternatywne:** 
 
-3.A. [Kupujący](#ac2) nie okazuje się w umówionym terminie
-* 3.A.1. [Kupujący](#ac2) ma 30 dni na ustalenie nowego terminu
-* 3.A.2 [Kupujący](#ac2) zostanie obciążony opłatą za dodatkowe magazynowanie przedmiotu
+3.A. [Kupujący](#ac2) wybiera płatność gotówką
+* 3.A.1. [Kupujący](#ac2) dokonuje płatności przy odbiorze przedmiotu
+5.A [Kupujący](#ac2) nie dokonuje płatności
+* 5.A.1. [Kupujący](#ac2) ma tydzień na uregulowanie płatności w systemie
+* 5.A.2. W przypadku nie dokonania płatności w terminie dodatkowym
 
-3.B. [Kupujący](#ac2) nie posiada dokumentu potwierdzającego jego tożsamość
-* 3.B.1. [Kupujący](#ac2) ma 30 dni na dostarczenie takiego dokumentu
-* 3.B.2. [Kupujący](#ac2) zostanie obciążony opłatą za dodatkowe magazynowanie przedmiotu
+---
+
+<a id="uc3"></a>
+### UC3: Przekazanie przedmiotu kupującemu
+
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
+
+**Scenariusz główny:**
+1. [Kupujący](#ac2) zgłasza chęc odebrania przedmiotu
+2. System prosi o wybranie terminu odbioru przedmiotu z listy dostępnych terminów
+3. [Kupujący](#ac2) wybiera termin odbioru
+4. System zapisuje podany termin
+5. [Kupujący](#ac2) okazuje się w umówionym terminie
+6. [Kupujący](#ac2) potwierdza swoją tożsamość
+7. [Sprzedający](#ac1) przekazuje przedmiot [Kupującemu](#ac2)
+8. [Sprzedający](#ac1) wprowadza status przekazania przedmiotu
+9. System informuje o zakończonym statusie przekazania przedmiotu
+
+**Scenariusze alternatywne:** 
+
+5.A. [Kupujący](#ac2) nie okazuje się w umówionym terminie
+* 5.A.1. [Kupujący](#ac2) ma 30 dni na ustalenie nowego terminu
+* 5.A.2 [Kupujący](#ac2) zostanie obciążony opłatą za dodatkowe magazynowanie przedmiotu
+
+6.A. [Kupujący](#ac2) nie posiada dokumentu potwierdzającego jego tożsamość
+* 6.A.1. [Kupujący](#ac2) ma 30 dni na dostarczenie takiego dokumentu oraz ustalenie nowego terminu
+* 6.A.2. [Kupujący](#ac2) zostanie obciążony opłatą za dodatkowe magazynowanie przedmiotu
 
 ---
 
@@ -130,6 +160,6 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 | Przypadek użycia                                  | Aukcja | Produkt | ... |
 | ------------------------------------------------- | ------ | ------- | --- |
 | UC1: Wystawienia produktu na aukcję               |    C   |    C    | ... |
-| ???                                               |  ...   |  ...    | ... |
+| UC2: Przekazanie przedmiotu kupującemu            |        |    D    | ... |
 
 
