@@ -19,7 +19,7 @@ Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży 
 2. [Kupujący](#ac2) oferuje kwotę za produkt wyższą od aktualnie najwyższej oferty. ([BR1](#br1))
 3. [Kupujący](#ac2) wygrywa aukcję ([BR2](#br2))
 4. [Kupujący](#ac2) przekazuje należność Sprzedającemu.
-5. [Sprzedający](#ac1) przekazuje produkt Kupującemu.
+5. [Sprzedający](#ac1) przekazuje produkt Kupującemu. ([UC2](#uc2))
 
 **Scenariusze alternatywne:** 
 
@@ -50,10 +50,10 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
-* ...
+* [UC2](#uc2): Przekazanie przedmiotu kupującemu
 
 [Kupujący](#ac2)
-* ...
+* [UC2](#uc2) Przekazanie przedmiotu kupującemu
 
 ---
 <a id="uc1"></a>
@@ -77,21 +77,31 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc2"></a>
-### UC2: ...
+### UC2: Przekazanie przedmiotu kupującemu
 
-**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2), ...
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. ...
+1. [Sprzedający](#ac1) przygotowuje przedmiot.
+2. [Kupujący](#ac2) umawia termin odebrania przedmiotu ze [Sprzedającym](#ac1)
+3. [Kupujący](#ac2) okazuje się w umówionym terminie i potwierdza swoją tożsamość
+4. [Sprzedający](#ac1) przekazuje przedmiot [Kupującemu](#ac2)
+5. [Sprzedający](#ac1) wprowadza status przekazania przedmiotu
+6. System informuje o zakończonym statusie przekazania przedmiotu
 
 **Scenariusze alternatywne:** 
 
-1.A. ...
-* 4.A.1. ...
+3.A. [Kupujący](#ac2) nie okazuje się w umówionym terminie
+* 3.A.1. [Kupujący](#ac2) ma 30 dni na ustalenie nowego terminu
+* 3.A.2 [Kupujący](#ac2) zostanie obciążony opłatą za dodatkowe magazynowanie przedmiotu
+
+3.B. [Kupujący](#ac2) nie posiada dokumentu potwierdzającego jego tożsamość
+* 3.B.1. [Kupujący](#ac2) ma 30 dni na dostarczenie takiego dokumentu
+* 3.B.2. [Kupujący](#ac2) zostanie obciążony opłatą za dodatkowe magazynowanie przedmiotu
 
 ---
 
-## Obiewkty biznesowe (inaczje obiekty dziedzinowe lub informatycjne)
+## Obiekty biznesowe (inaczje obiekty dziedzinowe lub informatycjne)
 
 ### BO1: Aukcja
 
