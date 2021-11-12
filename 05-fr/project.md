@@ -16,8 +16,8 @@ Specyfikacja wymagań funkcjonalnych w ramach informatyzacji procesu sprzedaży 
 
 **Scenariusz główny:**
 1. [Sprzedający](#ac1) wystawia produkt na aukcję. ([UC1](#uc1))
-2. [Kupujący](#ac2) oferuje kwotę za produkt wyższą od aktualnie najwyższej oferty. ([BR1](#br1))
-3. [Kupujący](#ac2) wygrywa aukcję ([BR2](#br2))
+2. [Kupujący](#ac2) oferuje kwotę za produkt wyższą od aktualnie najwyższej oferty. ([BR1](#br1), [UC2](#uc2))
+3. [Kupujący](#ac2) wygrywa aukcję ([BR2](#br2), [UC2](#uc2))
 4. [Kupujący](#ac2) przekazuje należność [Sprzedającemu](#ac1). ([UC2](#uc2))
 5. [Sprzedający](#ac1) przekazuje produkt [Kupującemu](#ac2). ([UC3](#uc3))
 
@@ -50,13 +50,13 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
-* [UC3](#uc2): Odebranie należności od kupującego
-* [UC4](#uc3): Przekazanie przedmiotu kupującemu
+* [UC3](#uc2): Przekazanie należności
+* [UC4](#uc3): Przekazanie przedmiotu 
 
 [Kupujący](#ac2)
 * [UC2](#uc2): Wygranie aukcji
-* [UC3](#uc2): Przekazanie należności sprzedającemu.
-* [UC4](#uc3): Odebranie przedmiotu od sprzedającego
+* [UC3](#uc2): Przekazanie należności 
+* [UC4](#uc3): Przekazanie przedmiotu
 
 ---
 <a id="uc1"></a>
@@ -88,14 +88,14 @@ Osoba chcąca zakupić produkt na aukcji.
 
 1. System informuje o rozpoczęciu aukcji
 2. System informuje o aktualnej kwocie za przedmiot
-3. [Kupujący](#ac2) składa ofertę według [reguły](#br1) 
+3. [Kupujący](#ac2) składa ofertę 
 4. System oczekuje na przebicie aktualnej oferty
 5. System akceptuje aktualną ofertę
 6. [Kupujący](#ac2) wygrywa akcje
 
 **Scenariusze alternatywne:** 
 
-3.A. Kupujący składa ofertę niezgodą z regułą
+3.A. [Kupujący](#ac2) składa ofertę niezgodą z [regułą](#br1) 
 * 3.A.1. Oferta zostaje odrzucona
 
 4.A. Oferta zostaje przebita
@@ -107,7 +107,7 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc3"></a>
-### UC3: Przekazanie należności sprzedającemu.
+### UC3: Przekazanie należności
 
 **Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
@@ -132,7 +132,7 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc4"></a>
-### UC4: Przekazanie przedmiotu kupującemu
+### UC4: Przekazanie przedmiotu
 
 **Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
@@ -190,9 +190,9 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 
 | Przypadek użycia                                  | Aukcja  | Produkt | ... |
 | ------------------------------------------------- | ------- | ------- | --- |
-| UC1: Wystawienia produktu na aukcję               |    C    |    C    | ... |
-| UC2: Wygranie aukcji                              |    U    |         | ... |
-| UC3: Przekazanie należności sprzedającemu         |    U    |         | ... |
-| UC4: Przekazanie przedmiotu kupującemu            |    D    |   U, D  | ... |
+| UC1: Wystawienie produktu na aukcję               |    C    |    C    | ... |
+| UC2: Wygranie aukcji                              |    U    |    R    | ... |
+| UC3: Przekazanie należności                       |    U    |    R    | ... |
+| UC4: Przekazanie przedmiotu                       |    D    |   U, D  | ... |
 
 
