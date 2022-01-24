@@ -1,0 +1,4 @@
+1. Zamiast wywoływać metodę averageSpendings w każdej iteracji, wywołałem ją przed i przypisałem wartość do zmiennej. W ten sposób złożoność obliczeniowa znacznie się zmniejszyła w związku z czyk średnia odpowiedź z ok 3129 zmeniła się na ok 53.
+
+2. Średnia przepustowość dla założonej przez analityków konfiguracji: Throughput: 1.9/sec
+Rekomendowana ilość drukarek: 30 - w ten sposób przepustowość zwiększy się do poziomu ok 5.8/sec
